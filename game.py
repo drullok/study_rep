@@ -17,18 +17,18 @@ def random_predict(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
-    minimum = 1  # нижняя граница
-    maximum = 100  # верхняя граница
+    mini = 1  # нижняя граница
+    maxi = 100  # верхняя граница
     predict_number = 50  # предполагаемое число
 
     while True:
         count += 1
         if number > predict_number:
-            minimum = predict_number
-            predict_number = maximum - (maximum - minimum) // 2
+            mini = predict_number
+            predict_number = maxi - (maxi - mini) // 2
         elif number < predict_number:
-            maximum = predict_number
-            predict_number = minimum + (maximum - minimum) // 2
+            maxi = predict_number
+            predict_number = mini + (maxi - mini) // 2
         else:
             break  # выход из цикла если угадали
 
